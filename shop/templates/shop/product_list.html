@@ -1,0 +1,24 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Product List - Vinyl Store{% endblock %}
+
+{% block content %}
+<div class="product-list">
+    <h1>Our Products</h1>
+    
+    {% if products %}
+        <div class="product-grid">
+            {% for product in products %}
+                <div class="product-item">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">${{ product.price }}</p>
+                    <button class="btn btn-primary" onclick="addToCart({{ product.id }})">Add to Cart</button>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No products available at the moment.</p>
+    {% endif %}
+</div>
+{% endblock %}

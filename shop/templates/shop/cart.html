@@ -1,0 +1,30 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+    <h1>Your Cart</h1>
+    {% if cart_items %}
+        <ul class="cart-items">
+            {% for item in cart_items %}
+            <li class="cart-item">
+                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>{{ item.product.name }}</h3>
+                    <p>Price: ${{ item.product.price }}</p>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <button onclick="updateQuantity({{ item.product.id }}, 'decrease')" class="btn btn-small">-</button>
+                    <button onclick="updateQuantity({{ item.product.id }}, 'increase')" class="btn btn-small">+</button>
+                    <button onclick="removeFromCart({{ item.product.id }})" class="btn btn-danger">Remove</button>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="cart-summary">
+            <p>Total: ${{ cart_total }}</p>
+            <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+        </div>
+    {% else %}
+        <p>Your cart is empty. <a href="{% url 'product_list' %}">Continue shopping</a></p>
+    {% endif %}
+{% endblock %}

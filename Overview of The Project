@@ -1,0 +1,77 @@
+# Eternal Records
+
+Eternal Records is an eCommerce website designed for vinyl album lovers, allowing users to explore a variety of vinyl records across different genres and make purchases online. The project was built using Django as part of a school assignment and includes functionalities such as a product catalog, user authentication, a shopping cart, and integration with PayPal and M-Pesa for payments.
+
+## Project Overview
+
+The Eternal Records website showcases the following features:
+- **Product Listings:** A grid-based layout that displays vinyl records across different categories like Hip-hop, RnB/Soul, Rock, and more.
+- **Shopping Cart:** Users can add vinyl records to the cart and proceed to checkout.
+- **User Authentication:** The platform allows users to sign up, log in, and manage their profiles.
+- **Checkout and Payment Integration:** Users can choose between PayPal or M-Pesa for payments during checkout.
+  
+## Features
+- **Home Page:** Displays featured records and categories for users to explore.
+- **Product Pages:** Each product page provides details about the vinyl, price, and option to add to cart.
+- **Cart System:** Displays selected items, allowing users to review their cart and proceed to payment.
+- **User Sign-up/Login:** Provides a simple user authentication system.
+- **Payments:** Checkout system integrated with PayPal and M-Pesa options for making payments.
+  
+## Technologies Used
+- **Backend:** Django 3.x (Python)
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Payment Gateways:** PayPal API, M-Pesa API
+
+## File Structure
+
+```bash
+eternal_records/
+├── eternalrecords/          # Django project folder
+│   ├── settings.py          # Project settings
+│   ├── urls.py              # URL routing
+│   └── ...
+├── store/                   # Main app containing the project features
+│   ├── static/              # Static assets (CSS, images)
+│   ├── templates/           # HTML templates for pages
+│   ├── models.py            # Database models
+│   ├── views.py             # View functions
+│   └── ...
+├── manage.py                # Django project management script
+├── mpesa_backend/           # Directory for handling M-Pesa API integration
+└── venv/                    # Python virtual environment
+```
+
+## Setup and Installation
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/eternal-records.git
+    ```
+2. Create a virtual environment and activate it:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # For Linux/Mac
+    venv\Scripts\activate  # For Windows
+    ```
+3. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4. Set up the database:
+    ```bash
+    python manage.py migrate
+    ```
+5. Run the development server:
+    ```bash
+    python manage.py runserver
+    ```
+
+## Usage
+
+Once the server is running, you can access the website at `http://127.0.0.1:8000`. You can browse the vinyl records, add items to your cart, and proceed to checkout using either PayPal or M-Pesa.
+
+## License
+
+This project is licensed for educational purposes and is part of a school assignment. 
+
+---
